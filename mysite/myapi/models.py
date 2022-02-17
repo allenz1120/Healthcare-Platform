@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 import uuid
 
@@ -16,4 +17,12 @@ class Users(models.Model):
     sex = models.CharField(max_length=10)
     pcp = models.CharField(max_length=50)
 
-# class Billing(models.Model):
+
+class Billing(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    insurance_company = models.CharField(max_length=50)
+    member_id = models.IntegerField(max_length=50)
+    member_name = models.CharField(max_length=50)
+    credit_card = models.IntegerField(max_length=16)
+    expiration_date = models.DateField()
+    cvv = models.IntegerField(max_length=3)
