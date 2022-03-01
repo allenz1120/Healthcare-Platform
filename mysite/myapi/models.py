@@ -21,8 +21,8 @@ class Users(models.Model):
 class Billing(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
     insurance_company = models.CharField(max_length=50)
-    member_id = models.IntegerField(max_length=50)
+    member_id = models.IntegerField
     member_name = models.CharField(max_length=50)
-    credit_card = models.IntegerField(max_length=16)
+    credit_card = models.IntegerField
     expiration_date = models.DateField()
-    cvv = models.IntegerField(max_length=3)
+    cvv = models.IntegerField
