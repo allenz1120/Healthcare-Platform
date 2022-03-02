@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Billing, Users
+from .models import Billing, Users, Medical_History
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,3 +15,10 @@ class BillingSerializer(serializers.HyperlinkedModelSerializer):
         model = Billing
         fields = ('user', 'insurance_company', 'member_id',
                   'member_name', 'credit_card', 'expiration_date', 'cvv')
+
+
+class MedicalHistorySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Medical_History
+        fields = ('user', 'family_predisposition', 'allergies',
+                  'medication', 'drinking', 'smoking')

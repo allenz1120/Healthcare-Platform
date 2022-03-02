@@ -21,8 +21,17 @@ class Users(models.Model):
 class Billing(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
     insurance_company = models.CharField(max_length=50)
-    member_id = models.IntegerField
+    member_id = models.IntegerField()
     member_name = models.CharField(max_length=50)
-    credit_card = models.IntegerField
+    credit_card = models.IntegerField()
     expiration_date = models.DateField()
-    cvv = models.IntegerField
+    cvv = models.IntegerField()
+
+
+class Medical_History(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    family_predisposition = models.CharField(max_length=100)
+    allergies = models.CharField(max_length=50)
+    medication = models.CharField(max_length=100)
+    drinking = models.BooleanField()
+    smoking = models.BooleanField()
