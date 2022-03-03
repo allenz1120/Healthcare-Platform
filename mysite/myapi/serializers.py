@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Billing, Users, Medical_History
+from .models import Billing, Users, Medical_History, Role_Relation
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -22,3 +22,16 @@ class MedicalHistorySerializer(serializers.HyperlinkedModelSerializer):
         model = Medical_History
         fields = ('user', 'family_predisposition', 'allergies',
                   'medication', 'drinking', 'smoking')
+
+
+class RoleRelationSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Role_Relation
+        fields = ('user', 'rid', 'delete',
+                  'date_of_change')
+
+
+# class RolesSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Roles
+#         fields = ('rid', 'role')

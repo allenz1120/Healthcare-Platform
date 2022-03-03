@@ -1,6 +1,7 @@
 from pyexpat import model
 from django.db import models
 import uuid
+from django.core.validators import int_list_validator
 
 # Create your models here.
 
@@ -35,3 +36,16 @@ class Medical_History(models.Model):
     medication = models.CharField(max_length=100)
     drinking = models.BooleanField()
     smoking = models.BooleanField()
+
+
+class Role_Relation(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    rid = models.IntegerField()
+    delete = models.BooleanField()
+    date_of_change = models.DateField()
+
+
+# class Roles(models.Model):
+#     rid = models.ForeignKey(Role_Relation, to_field="rid",
+#                             db_column="rid", on_delete=models.CASCADE)
+#     role = models.CharField(max_length=15)
