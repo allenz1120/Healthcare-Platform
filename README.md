@@ -7,6 +7,7 @@ pip install djangorestframework
 
 ## Running the Django Server
 python manage.py runserver
+<br>
 python3 manage.py runserver 172.31.85.185:8000 on ec2 instance
 ## Relational Database Schema
 Django relational database with a user's UID as the primary key that links a majority of the tables
