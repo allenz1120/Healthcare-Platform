@@ -12,7 +12,7 @@ On ec2 instance:
 <br>
 python3 manage.py runserver 172.31.85.185:8000 
 <br>
-Reach the server using http://{public IP}/8000
+Reach the server using http://{public IP}:8000
 <br>
 ## Relational Database Schema
 Django relational database with a user's UID as the primary key that links a majority of the tables
