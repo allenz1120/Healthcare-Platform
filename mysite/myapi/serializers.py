@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Billing, Users, Medical_History, Role_Relation, Roles
+from .models import Billing, Users, Medical_History, Role_Relation, Roles, Device_Thermometer, Device_Blood_Pressure
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -35,3 +35,14 @@ class RolesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Roles
         fields = ('rid', 'role')
+
+class DeviceBPSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Device_Blood_Pressure
+        fields = ('user', 'blood_pressure', 'last_measured')
+
+class DeviceTempSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Device_Thermometer
+        fields = ('user', 'temperature', 'last_measured')
+

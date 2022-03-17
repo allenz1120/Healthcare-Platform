@@ -48,3 +48,13 @@ class Role_Relation(models.Model):
 class Roles(models.Model):
     rid = models.IntegerField()
     role = models.CharField(max_length=15)
+
+class Device_Blood_Pressure(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    blood_pressure = models.IntegerField()
+    last_measured = models.DateField()
+
+class Device_Thermometer(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    temperature = models.IntegerField()
+    last_measured = models.DateField()

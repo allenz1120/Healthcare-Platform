@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
-from .serializers import UserSerializer, BillingSerializer, MedicalHistorySerializer, RoleRelationSerializer, RolesSerializer
-from .models import Users, Billing, Medical_History, Role_Relation, Roles
+from .serializers import UserSerializer, BillingSerializer, MedicalHistorySerializer, RoleRelationSerializer, RolesSerializer, DeviceBPSerializer, DeviceTempSerializer
+from .models import Users, Billing, Medical_History, Role_Relation, Roles, Device_Blood_Pressure, Device_Thermometer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -29,3 +29,12 @@ class RoleRelationViewSet(viewsets.ModelViewSet):
 class RolesViewSet(viewsets.ModelViewSet):
     queryset = Roles.objects.all().order_by('rid')
     serializer_class = RolesSerializer
+
+class DeviceBPViewSet(viewsets.ModelViewSet):
+    queryset = Device_Blood_Pressure.objects.all().order_by('user')
+    serializer_class = DeviceBPSerializer
+
+class DeviceTempViewSet(viewsets.ModelViewSet):
+    queryset = Device_Thermometer.objects.all().order_by('user')
+    serializer_class = DeviceTempSerializer
+
