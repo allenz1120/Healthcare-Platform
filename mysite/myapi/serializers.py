@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Billing, Users, Medical_History, Role_Relation
+from .models import Billing, Users, Medical_History, Role_Relation, Roles
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -31,7 +31,7 @@ class RoleRelationSerializer(serializers.HyperlinkedModelSerializer):
                   'date_of_change')
 
 
-# class RolesSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Roles
-#         fields = ('rid', 'role')
+class RolesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Roles
+        fields = ('rid', 'role')

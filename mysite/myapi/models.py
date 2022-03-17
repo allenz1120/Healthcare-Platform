@@ -45,7 +45,6 @@ class Role_Relation(models.Model):
     date_of_change = models.DateField()
 
 
-# class Roles(models.Model):
-#     rid = models.ForeignKey(Role_Relation, to_field="rid",
-#                             db_column="rid", on_delete=models.CASCADE)
-#     role = models.CharField(max_length=15)
+class Roles(models.Model):
+    rid = models.IntegerField()
+    role = models.CharField(max_length=15)
