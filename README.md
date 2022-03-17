@@ -3,6 +3,7 @@ Platform used to monitor paitents at home or in the hospital. Paitents and medic
 
 ## Dependencies
 pip install django
+<br>
 pip install djangorestframework
 
 ## Running the Django Server
@@ -17,5 +18,9 @@ Reach the server using http://{public IP}:8000
 ## Relational Database Schema
 Django relational database with a user's UID as the primary key that links a majority of the tables
 ![image](https://user-images.githubusercontent.com/55994268/155548655-1ab4a1ee-7a20-4b61-bb7a-e80aef9e9078.png)
+### Roles
+Each user selects from a bank of predefined roles. They are defined as RID (integers mapped to roles)
+![image](https://user-images.githubusercontent.com/55994268/158822023-e5bb9745-f28d-45de-b96b-7adc8129ce8e.png)
+
 ## Chatting Function
 Users are able to chat within the application. By naviagting to the /chat url, a user can choose the chat room they want to enter and then begin communicating. This application uses Redis to store messages. When two or more windows of the same chat room are open, users can send messages back and forth that populate on both chat boxes.
